@@ -1,8 +1,5 @@
 {
   "builds": [
-    { "src": "next.config.ts", "use": "@vercel/next" }
-  ],
-  "rewrites": [
-    { "source": "/public/:match*", "destination": "/public/:match*" }
+    { "src": "package.json", "use": "@vercel/next" }
   ]
 }
