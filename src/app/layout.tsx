@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import VisualEditsMessenger from "../visual-edits/VisualEditsMessenger";
 import Script from "next/script";
 import { ThemeProvider } from "@/components/ui/theme-context";
 
@@ -28,7 +27,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             data-custom-data='{"appName": "MAPIT", "version": "1.0.0", "greeting": "hi"}'
           />
           {children}
-          <VisualEditsMessenger />
         </ThemeProvider>
       </body>
     </html>
