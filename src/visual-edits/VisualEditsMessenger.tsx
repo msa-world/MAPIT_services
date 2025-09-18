@@ -1902,7 +1902,7 @@ export default function HoverReceiver() {
           ];
 
           stylesToClear.forEach((prop) => {
-            (element.style as { [key: string]: string })[prop] = "";
+            (element.style as unknown as { [key: string]: string })[prop] = "";
           });
         });
 
