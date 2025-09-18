@@ -390,7 +390,7 @@ export const ButtonLoader: React.FC<ButtonLoaderProps> = ({
 };
 
 // Export all components
-export default {
+const loaders = {
   PageLoader,
   SectionLoader,
   CardLoader,
@@ -398,3 +398,4 @@ export default {
   ImageLoader,
   ButtonLoader
 };
+export default loaders;
