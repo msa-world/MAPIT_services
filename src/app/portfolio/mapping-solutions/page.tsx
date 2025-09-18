@@ -35,7 +35,8 @@ import {
   Mail,
   Phone
 } from 'lucide-react';
-import { motion, Variants, easeOut } from 'framer-motion';
+import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
