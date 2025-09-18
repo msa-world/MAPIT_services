@@ -9,7 +9,7 @@ const FOCUSED_ELEMENT_KEY = "orchids_focused_element" as const;
 // Deduplicate helper for high-frequency traffic (HIT / FOCUS_MOVED / SCROLL)
 // -----------------------------------------------------------------------------
 let _orchidsLastMsg = "";
-const postMessageDedup = (data: any) => {
+const postMessageDedup = (data: Record<string, unknown>) => {
   try {
     const key = JSON.stringify(data);
     if (key === _orchidsLastMsg) return; // identical – drop
@@ -1232,12 +1232,12 @@ export default function HoverReceiver() {
       element.blur();
 
       // Remove event handlers
-      const handlers = (element as any)._editHandlers;
+  const handlers = (element as { _editHandlers?: { focus: EventListenerOrEventListenerObject; blur: EventListenerOrEventListenerObject; input: EventListenerOrEventListenerObject } })._editHandlers;
       if (handlers) {
-        element.removeEventListener("focus", handlers.focus);
-        element.removeEventListener("blur", handlers.blur);
-        element.removeEventListener("input", handlers.input);
-        delete (element as any)._editHandlers;
+  element.removeEventListener("focus", handlers.focus);
+  element.removeEventListener("blur", handlers.blur);
+  element.removeEventListener("input", handlers.input);
+  delete (element as { _editHandlers?: unknown })._editHandlers;
       }
 
       wasEditableRef.current = false;
@@ -1656,7 +1656,7 @@ export default function HoverReceiver() {
             hit.addEventListener("input", handlers.handleInput);
 
             // Store handlers for cleanup
-            (hit as any)._editHandlers = {
+            (hit as { _editHandlers?: { focus: EventListenerOrEventListenerObject; blur: EventListenerOrEventListenerObject; input: EventListenerOrEventListenerObject } })._editHandlers = {
               focus: handlers.handleFocus,
               blur: handlers.handleBlur,
               input: handlers.handleInput,
@@ -1902,7 +1902,7 @@ export default function HoverReceiver() {
           ];
 
           stylesToClear.forEach((prop) => {
-            (element.style as any)[prop] = "";
+            (element.style as { [key: string]: string })[prop] = "";
           });
         });
 
