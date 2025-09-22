@@ -51,7 +51,7 @@ const portfolio = [
 const services = [
   /*{/* icon: <Settings className="h-5 w-5 text-primary" />, title: "GIS Consulting", description: "Expert consulting services for spatial data strategy and implementation", href: "/services/gis-consulting" },
        */
-  { icon: <Satellite className="h-5 w-5 text-primary" />, title: "Spatial Data Analysis", description: "Advanced satellite imagery processing and analysis for earth observation", href: "/solutions/satellite-analysis" },    
+  { icon: <Satellite className="h-5 w-5 text-primary" />, title: "Spatial Data Analysis", description: "Unlock location-based insights with advanced spatial analytics, predictive models, and powerful visualizations for smarter decisions.", href: "/solutions/satellite-analysis" },    
   { icon: <Zap className="h-5 w-5 text-primary" />, title: "Web-Gis Development", description: "Tailored GIS applications and spatial analysis tools with web GIS solutions", href: "/services/custom-development" },
  
 ];
